@@ -1,0 +1,183 @@
+%%HP: T(0)A(D)F(.);
+@ Argumentos:
+@ Autor: Erich Daniel Enamorado Aceituno
+@ E-mail: erich.enamorado@unah.hn
+@ VersiÛn:
+@ Creado con HPUserEdit 6
+
+´
+@====Configuracion de Flags
+-17 CF -18 CF                @MODO GRADOS
+-45 CF -46 SF -47 CF -48 CF  @2 FIX
+
+@====Eliminar variables
+{'OP' 'X' 'ALTURA' 'REP'} PURGE
+PICT PURGE
+
+
+@====Pantalla de seleccion
+GROB 131 80 000000000000000000000000000000000000000000000F1E1E070C07000000000000000000000081232399069900000000000000000000008D9D9DC616D61000000000000000000000811395C697D010000000000000000000008D1FADC6D6D6100000000000000000000081A1139989C610000000000000000000000F1F0E07078D0000000000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF70FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF70FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF70FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF700000000000000008F000000000000000000000008703000008F0000003C381000000000000CF0F000008F0000083E787000000000000CF0E100008F00000E1E70F000000000000EF1E100008F00000E3FF0F000000000000FF3E000008F000008BFF17000000000000FF3A000008F0000048FF15000000000008FF70100008F000002CFF38000000000008FC70200008F000002C7E3010000000000CFCF0200008F000001E7E7010000000000E78F1400008F000080F3CF020000000000E78F1800008F000080F3CF040000000000F30F3000008F000048F18F100000000008F10E700F008F00F30CF00F308700000008F10E700F008F00F30CF00F30870000000CF00CF0C0308F003C0E700E70681000000C7008F0C0308F003C0E300C70681000000E7008F1CF308F00F70F300CF0EF1000000F3000F3CF308F00F78F1008F1EF1000000F3000F3C0308F003C8F1008F1681000008F1000E7C0308F003CCF0000F368100000CF0000CFC0308F00F3E70000E768100000CF0000CFC0308F00F3E70000E768100000E700008F10008F0000F30000CF00000000F300000F30008F0008F100008F10000000F300000F30008F0028F100008F14000008F100000E70008F001CF000000F38000008F000000C70108F001C7000000E3810000CF0000C3CF0208F080E7000000E7010000E70810468F1208F040F30C0000CF020000E70F00C78F1408F820F3870000CF060000F78400C3CF3808F828F34200008F141008FD9400467E7808FC1CFE4200000F381008F13F00E71E7058FC7CF89700000F3E100CF02810681CF078FC3E701C00000E7C100C7060002808F878FC0E303000000C70300E7040000808F168F40F302000000CF0000F3040000C00F3C8F08F1020000008F1000F3040000C00F388F08F1020000008F1008FFFFFFFFFFFF708F0CFFFFFFFFFFFF3008FFFFFFFFFFFF708F0CFFFFFFFFFFFF3008FFFFFFFFFFFF708F0CFFFFFFFFFFFF3008FFFFFFFFFFFF708F0CFFFFFFFFFFFF3000000000000000008F000000000000000000000000000000008F000000000000000000E1E13040E130E18F000006060C30000000F3F33040F330F38F000006060E70000000333330003330338F000006060660000000333330403330338F000006060660000000F3F33040F330F38F000006060E70000000F3F33000F330F38F000006060E70000000333330403330338F000006060660000000333330403330338F0000060606600000003333F30033F3338F00000E7E76600000003333F34033F3338F00000E7E7660000000000000400000008F000000000000000000000000000000008F000000000000000000000000000000008F000000000000000000000000000000008F000000000000000000000000000000008F000000000000000000000081003000008F000000600C0000000000008C332000008F0000002FE900000000000084842000008F00000021280000000000008C122000008F00000027E800000000000084012000008F000000210900000000000084872000008F00000021E800000000000081003000008F000000600C0000000
+PICT STO
+
+@====Bucle para ecoger la opcion
+
+  DO
+  REP 'REP' SAME NOT ´ "Escoja pulsando la tecla
+[F2] Û [F5]" MSGBOX ª IFT                      @En caso se tecla erronea                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+  'REP' PURGE 
+
+
+  {#0d #0d} PVIEW     @MUESTRA EL GRBO EN PICT POR UN INSTANTE
+
+  KEY WAIT            @ESPERA A QUE SE PRESIONE UNA TECLA
+  'OP' STO
+  1 'REP' STO
+
+  UNTIL OP 12.1  SAME OP 15.1 SAME OR
+  END
+
+
+     "COMPLETA  LOS  DATOS"
+
+     IF OP 12.1 SAME
+     THEN @Si se elige ALA AAL mostar el siguiente INFORM
+     { "A" "lado opuesto al ·ngulo å"  }
+     { "å" "¡ngulo opuesto al lado A" }
+     { "ﬂ" "Angulo opuesto a la incognita" }
+     ELSE @Si se elige LLA mostar el siguiente INFORM
+     { "å" "Angulo opuesto al lado A"  }
+     { "A" "Lado opuesto al angulo å" }
+     { "B" "Lado opuesto a la incognita" }
+     END
+     
+     3 çLIST
+     1
+     { }
+     { }
+     INFORM
+     DROP EVAL
+
+CASE
+
+  OP 12.1  SAME @==Si se escoge la opcion de AAL ALA
+  THEN
+   ç  a A b
+   
+   ´
+   @Comprobacion de los datos
+   CASE
+   a 0 <  a 180 ä OR                      @CASO 1 NO ES ANGULO
+   THEN
+   "¡ngulo erroneo" MSGBOX KILL
+   END
+   A 0 <                                  @CASO 2 NO ES LADO
+   THEN
+   "Longitud negativa" MSGBOX KILL   
+   END
+   b 0 <  b 180 ä OR                      @CASO 3 NO ES ANGULO
+   THEN 
+   "¡ngulo erroneo" MSGBOX KILL
+   END      
+   END
+   
+   @Incio de Operaciones   
+   a                                      'å' çTAG
+   A                                      'A' çTAG
+   b                                      'ﬂ' çTAG
+   
+   a SIN A / 
+   b SIN 'X' /  =
+   'X' 0 ROOT                         'B' çTAG    'X' PURGE   
+   
+   180 a b + - DUP                  'ì' çTAG
+   
+   SWAP SIN X / 
+   a SIN A / =
+   'X' 0 ROOT                         'E' çTAG                                                               
+   ª
+  END @===========================Fin del caso 12.1 ALA AAL
+
+
+  
+     OP 15.1 SAME @==Si se escoge la opcion de LLA
+     THEN
+     ç a A B
+     
+     ´
+     @==Comprobacion de los datos     
+     CASE
+     a 0 <  a 180 ä OR                @CASO 1 NO ES ANGULO
+     THEN
+     "¡ngulo erroneo" MSGBOX KILL
+     END
+     A 0 <                            @CASO 2 NO ES LADO
+     THEN
+     "Longitud negativa" MSGBOX KILL
+     END
+     B 0 <                            @CASO 3 NO ES LADO
+     THEN
+     "Longitud negativa" MSGBOX KILL  
+     END
+
+     @==Comprobaciones para el caso de altura y caso angulo obtuso    
+          
+     a 90 > A B â AND                 @CASO 4 (ANGULO OBUTUSO MENOR QUE A
+     THEN
+     "No esixte el triangulo
+porque: 
+ 1) LADO â Lado B
+ 2) a = Obtuso" MSGBOX KILL
+     END
+     a 90 <                           @CASO 5 ALTURA MAYOR QUE A
+     THEN
+     a SIN
+     'X' B / =
+     'X' 0 ROOT DUP 'ALTURA' STO   A >  ´ "No esixte el triangulo
+porque:
+altura > Lado A" MSGBOX KILL  ª     IFT
+     END                   
+     END     
+    
+
+        'X' PURGE
+                                  
+        a                                       'å' çTAG
+        A                                       'A' çTAG
+        B                                       'B' çTAG
+             
+        a SIN A /
+        'X' SIN B /  =
+        'X' 0 ROOT                              'ﬂ' çTAG  SWAP  'X' PURGE
+
+        180  3 PICK a + -                       'ì' çTAG
+
+        a SIN A /
+        2 PICK SIN 'X' /  =
+        'X' 0 ROOT                              'E' çTAG 'X' PURGE 
+            
+            @====Si se cumple el caso ambiguo                   
+            IF a 90 <
+            THEN
+             a 'å' çTAG A 'A' çTAG B 'B' çTAG
+             180 8 PICK  -                      'ﬂ2' çTAG 
+
+             180 2 PICK a + -                   'ì2'  çTAG               
+                     
+             a SIN A /
+             2 PICK SIN 'X' /  =
+             'X' 0 ROOT                         'E2' çTAG 
+             {3 2} çARRY  
+             DEPTH ROLLD                                                                             
+           END
+                   
+     ª
+          
+     END @============================Fin del caso 15.1 LLA
+
+END @Fin del programa principal
+
+{3 2} çARRY
+
+{'X' } PURGE
+     
+ª

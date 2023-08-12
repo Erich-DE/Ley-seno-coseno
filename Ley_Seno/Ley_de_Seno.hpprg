@@ -42,7 +42,7 @@ PICT STO
 
      IF OP 12.1 SAME
      THEN @Si se elige ALA AAL mostar el siguiente INFORM
-     { "A" "lado opuesto al ·ngulo å"  }
+     { "A" "Lado opuesto al ·ngulo å"  }
      { "å" "¡ngulo opuesto al lado A" }
      { "ﬂ" "Angulo opuesto a la incognita" }
      ELSE @Si se elige LLA mostar el siguiente INFORM
@@ -84,19 +84,19 @@ CASE
    END
    
    @Incio de Operaciones   
-   a                                      'å' çTAG
-   A                                      'A' çTAG
-   b                                      'ﬂ' çTAG
+   a                         'å' çTAG
+   A                         'A' çTAG
+   b                         'ﬂ' çTAG
    
    a SIN A / 
    b SIN 'X' /  =
-   'X' 0 ROOT                         'B' çTAG    'X' PURGE   
+   'X' 0 ROOT 'X' PURGE      'B' çTAG     
    
-   180 a b + - DUP                  'ì' çTAG
+   180 a b + - DUP           'ì' çTAG
    
    SWAP SIN X / 
    a SIN A / =
-   'X' 0 ROOT                         'E' çTAG                                                               
+   'X' 0 ROOT                'E' çTAG                                                               
    ª
   END @===========================Fin del caso 12.1 ALA AAL
 
@@ -144,19 +144,19 @@ altura > Lado A" MSGBOX KILL  ª     IFT
 
         'X' PURGE
                                   
-        a                                       'å' çTAG
-        A                                       'A' çTAG
-        B                                       'B' çTAG
+        a                       'å' çTAG
+        A                       'A' çTAG
+        B                       'B' çTAG
              
         a SIN A /
         'X' SIN B /  =
-        'X' 0 ROOT                              'ﬂ' çTAG  SWAP  'X' PURGE
+        'X' 0 ROOT 'X' PURGE    'ﬂ' çTAG  SWAP  
 
-        180  3 PICK a + -                       'ì' çTAG
+        180  3 PICK a + -       'ì' çTAG
 
         a SIN A /
         2 PICK SIN 'X' /  =
-        'X' 0 ROOT                              'E' çTAG 'X' PURGE 
+        'X' 0 ROOT               'E' çTAG 'X' PURGE 
             
             @====Si se cumple el caso ambiguo                   
             IF a 90 <

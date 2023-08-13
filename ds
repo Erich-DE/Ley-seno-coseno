@@ -1,0 +1,41 @@
+[33mcommit 3492af0da3528ebae16399f87ef913d2f2f74c7c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Erich DELL <david8enaceituno@gmail.com>
+Date:   Sat Aug 12 11:42:59 2023 -0600
+
+    Cambio de nombre del programa
+
+[33mcommit 2db26cbc2324c341960bb394309a49836476a5ee[m
+Author: Erich DELL <david8enaceituno@gmail.com>
+Date:   Sat Aug 12 11:36:43 2023 -0600
+
+    Cambio de nombre del programa Ley de Seno a LySen
+
+[33mcommit e3766f8cc13932d13caa8693ed4883a9177bb5d2[m
+Author: Erich-DE <138999881+Erich-DE@users.noreply.github.com>
+Date:   Sat Aug 12 11:28:31 2023 -0600
+
+    Delete Ley de Seno.hpprg
+
+[33mcommit 15b92079a2f951141d1e4c3b4ff448acf839885e[m
+Author: Erich-ED <erich.enamorado@outlook.com>
+Date:   Sat Aug 12 02:07:30 2023 -0600
+
+    Se corrigio solo la estetica de los comentarios y operaciones
+
+[33mcommit fedb0a15db343a7a1ebaacb8b761a6d131d26fb8[m
+Author: Erich-ED <erich.enamorado@outlook.com>
+Date:   Sat Aug 12 01:54:36 2023 -0600
+
+    Se corrigieron espacios y letras
+
+[33mcommit 5df99852efb1ff1f2ed92a5ce71cbc143934dd96[m
+Author: Erich-ED <erich.enamorado@outlook.com>
+Date:   Sat Aug 12 01:37:47 2023 -0600
+
+    Se agregaron comentarios al archivo ley de seno
+
+[33mcommit 1f69ba9aaae7319b4365919c33c833f6e41b082f[m
+Author: Erich-ED <erich.enamorado@outlook.com>
+Date:   Sat Aug 12 01:19:31 2023 -0600
+
+    Primer commit
